@@ -1,0 +1,12 @@
+@use '../../base/breakpoints' as *;
+
+@function is-breakpoint($value){
+    
+    @each $mq, $mqpx in $breakpoints{
+        @if $mq == $value{
+            @return true;
+        }
+    }
+
+    @return false;
+}

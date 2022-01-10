@@ -1,0 +1,14 @@
+@use '../mixins/container-mix' as *;
+
+%rescontainer{
+    background-color: white;
+    /* @include container(350px,95%,500px,null,vsm);
+    @include container(350px,95%,500px,vsm,sm);
+    @include container(600px,90%,700px,sm,md);
+    @include container(700px,85%,920px,md,lg);
+    @include container(1000px,75%,1100px,lg,xl);
+    @include container(1000px,70%,1300px,lg,xl);
+    @include container(1300px,65%,1700px,xl,xxl);
+    @include container(1300px,65%,1700px,xxl,null); */
+}
+

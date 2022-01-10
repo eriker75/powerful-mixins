@@ -1,0 +1,45 @@
+@use '../mixins/responsive-mix' as *;
+
+@mixin container($min-width: null, 
+                 $width: null, 
+                 $max-width: null,
+                 $start-mq:null,
+                 $end-mq: null,
+                 $margin: 0 auto,
+                 $text-align: center
+){
+    @if $start-mq and $end-mq{
+        @include resmix($start-mq,$end-mq){
+            min-width: $min-width;
+            width: $width;
+            max-width: $max-width;
+            margin: $margin;
+            text-align: $text-align;
+            @content;
+        }
+    } @else if($start-mq) {
+        @include resmix($start-mq){
+            min-width: $min-width;
+            width: $width;
+            max-width: $max-width;
+            margin: $margin;
+            text-align: $text-align;
+            @content;
+        }
+    } @else if($end-mq) {
+        @include resmix(null,$end-mq){
+            min-width: $min-width;
+            width: $width;
+            max-width: $max-width;
+            margin: $margin;
+            text-align: $text-align;
+            @content;
+        }
+    } @else {
+        min-width: $min-width;
+        width: $width;
+        max-width: $max-width;
+        margin: $margin;
+        text-align: $text-align;
+    }
+}

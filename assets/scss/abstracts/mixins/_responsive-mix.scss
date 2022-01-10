@@ -1,0 +1,55 @@
+@use '../../base/breakpoints' as *;
+@use '../functions/checktype-func' as *;
+@use '../functions/is-breakpoint' as *;
+@use "sass:map";
+
+@mixin resmix($start-mq:null,$end-mq: null){
+    @if $start-mq and $end-mq{
+        @if (is-breakpoint($start-mq) and is-breakpoint($end-mq)){
+            @media screen and (min-width: map.get($breakpoints , $start-mq)) and (max-width: map.get($breakpoints , $end-mq)){
+                @content;
+            }
+        } @else if(is-breakpoint($start-mq) and (not is-breakpoint($end-mq)) and is-absolute-length($end-mq)){
+            
+            @media screen and (min-width: map.get($breakpoints , $start-mq)) and (max-width: $end-mq){
+                @content;
+            }
+        } @else if(not is-breakpoint($start-mq) and is-breakpoint($end-mq) and is-absolute-length($start-mq)){
+            @media screen and (min-width: $start-mq) and (max-width: map.get($breakpoints , $end-mq)){
+                @content;
+            }
+        } @else if( not is-breakpoint($start-mq) and not is-breakpoint($end-mq) and is-absolute-length($end-mq) and is-absolute-length($start-mq)) {
+            @media screen and (min-width: $start-mq) and (max-width: $end-mq){
+                @content;
+            }
+        } @else {
+            @content; 
+        }
+    } @else if($start-mq) {
+        @if (is-breakpoint($start-mq)){
+            @media only screen and (min-width: map.get($breakpoints , $start-mq)) {
+                @content;
+            }
+        } @else if(is-absolute-length($start-mq)){
+            @media only screen and (min-width: $start-mq) {
+                @content;
+            }
+        } @else {
+            @content;
+        }
+    } @else if($end-mq){
+        @if (is-breakpoint($end-mq)){
+            @media only screen and (max-width: map.get($breakpoints , $end-mq)) {
+                @content;
+            }
+        } @else if(is-absolute-length($end-mq)){
+            @media only screen and (max-width: $end-mq) {
+                @content;
+            }   
+        } @else {
+            @content;
+        }
+    } @else{
+        @content;
+    }
+}

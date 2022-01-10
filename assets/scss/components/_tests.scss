@@ -1,0 +1,72 @@
+@use '../abstracts/mixins/responsive-mix' as *;
+@use '../abstracts/mixins/container-mix' as *;
+@use '../abstracts/placeholders/rescontainer' as *;
+@use '../abstracts/placeholders/rescontainer' as *;
+
+body{
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.home{
+    $home: &;
+    &-container{
+        @extend %rescontainer;
+
+        @include container(0px,95%,500px,null,vsm){
+            background-color: red;
+        }
+        @include container(350px,95%,500px,vsm,sm){
+            background-color: orange;
+        }
+        @include container(600px,90%,700px,sm,md){
+            background-color: green;
+        }
+        @include container(700px,85%,920px,md,lg){
+            background-color: blue;
+        }
+        @include container(1000px,75%,1100px,lg,xl){
+            background-color: purple;
+        }
+        @include container(1000px,70%,1300px,lg,xl){
+            background-color: gray;
+        }
+        @include container(1300px,65%,1700px,xl,xxl){
+            background-color: salmon;
+        }
+        @include container(1300px,65%,1700px,xxl,null){
+            background-color: aquamarine;
+        }
+
+        & > #{$home}-block{
+
+            min-height: 100px;
+            color: white;
+            font-size: 2rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &__1{
+                color: white;
+            }
+
+            &__2{
+                color: red;
+            }
+
+            &__3{
+                color: purple;
+            }
+            
+        }
+    }
+}

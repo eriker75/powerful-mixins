@@ -1,0 +1,124 @@
+.home-container {
+  background-color: white;
+  /* @include container(350px,95%,500px,null,vsm);
+  @include container(350px,95%,500px,vsm,sm);
+  @include container(600px,90%,700px,sm,md);
+  @include container(700px,85%,920px,md,lg);
+  @include container(1000px,75%,1100px,lg,xl);
+  @include container(1000px,70%,1300px,lg,xl);
+  @include container(1300px,65%,1700px,xl,xxl);
+  @include container(1300px,65%,1700px,xxl,null); */
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@media only screen and (max-width: 300px) {
+  .home-container {
+    min-width: 0px;
+    width: 95%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: red;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 576px) {
+  .home-container {
+    min-width: 350px;
+    width: 95%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: orange;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .home-container {
+    min-width: 600px;
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: green;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .home-container {
+    min-width: 700px;
+    width: 85%;
+    max-width: 920px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: blue;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .home-container {
+    min-width: 1000px;
+    width: 75%;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: purple;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .home-container {
+    min-width: 1000px;
+    width: 70%;
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: gray;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .home-container {
+    min-width: 1300px;
+    width: 65%;
+    max-width: 1700px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: salmon;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .home-container {
+    min-width: 1300px;
+    width: 65%;
+    max-width: 1700px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: aquamarine;
+  }
+}
+.home-container > .home-block {
+  min-height: 100px;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-container > .home-block__1 {
+  color: white;
+}
+.home-container > .home-block__2 {
+  color: red;
+}
+.home-container > .home-block__3 {
+  color: purple;
+}
+
+/*# sourceMappingURL=main.css.map */
