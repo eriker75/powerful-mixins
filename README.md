@@ -1,2 +1,4 @@
 # powerful-mixins
- Powerful mixins to optimize the agile and fast development of frontend applications with sass
+boilerplate with powerful mixins to optimize the agile and fast development of frontend applications with sass
+
+Develope mode npm run watch
